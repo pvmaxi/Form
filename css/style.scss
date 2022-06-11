@@ -1,0 +1,126 @@
+$primary-color: #F4F4F4;
+
+%font-styles {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #222222;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.registration {
+    &__wrapper {
+        padding: 70px 0;
+        background: #E5E5E5;
+    }
+    &__form {
+        background: #fff;
+        backdrop-filter: blur(11px);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        max-width: 530px;
+        margin: 0 auto;
+        padding: 50px;
+        box-sizing: border-box;
+    }
+}
+
+.common-form {
+    &__input {
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        background-color: $primary-color;
+        margin-bottom: 16px;
+        line-height: 1.7;
+        @extend %font-styles;
+        padding: 11px 15px 12px;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        &::placeholder {
+            color: #222;
+        }
+    }
+    &__input-group {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 20px;
+    }
+    &__date {
+        width: 48%;
+        margin-right: 16px;
+        padding-left: 15px;
+        padding-right: 10px;
+    }
+    &__select {
+        width: 48%;
+        padding-left: 15px;
+        appearance: none;
+        background: url(../img/down-small.svg) no-repeat right $primary-color;
+        background-position-x: calc(100% - 16px);
+    }
+    &__radio-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+    }
+    &__text {
+        @extend %font-styles;
+        margin-bottom: 22px;
+        margin-top: 0;
+    }
+    label {
+        @extend %font-styles;
+        display: flex;
+        align-items: center;
+        margin-bottom: 14px;
+        & input {
+            display: none;
+        }
+        & span {
+            position: relative;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #222222;
+            border-radius: 50%;
+            margin-right: 13px;
+        }
+        & input:checked + span::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #222;
+            left: 3px;
+            top: 3px;
+            border-radius: 50%;
+        }
+    }
+    &__checkbox-group {
+        width: 100%;
+        label {
+            span {
+                border-radius: 3px;
+                margin-right: 8px;
+            }
+            & input:checked + span::before {
+                content: url(../img/Path.svg);
+                width: 0;
+                height: 0;
+                left: 5px;
+                top: 0;
+            }
+        }
+    }
+}
+
+
